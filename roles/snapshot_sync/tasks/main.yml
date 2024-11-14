@@ -63,6 +63,11 @@
         owner: "{{ service_identifier }}"
         group: "{{ service_identifier }}"
         mode: "0644"
+
+    - name: Remove validator state file after copy
+      ansible.builtin.file:
+        path: "{{ snapshot_sync_home_dir }}/{{ snapshot_sync_priv_validator_state_file_name }}"
+        state: absent
   rescue:
     - name: Handle missing file
       ansible.builtin.debug:
