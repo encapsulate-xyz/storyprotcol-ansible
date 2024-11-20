@@ -5,7 +5,7 @@
 
 - name: Apply UFW rules
   ansible.builtin.include_tasks: tasks/apply_ufw_rules.yml
-  loop: "{{ consensus_ufw_rules }}"
+  loop: "{{ consensus_ufw_rules[type] }}"
 
 - name: Set seeds
   ansible.builtin.set_fact:
