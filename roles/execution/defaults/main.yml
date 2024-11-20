@@ -17,3 +17,4 @@ execution_directories:
 
 execution_log_file_path: "{{ execution_log_dir }}/{{ service_identifier }}.log"
 execution_jwt_secret_path: "{{ execution_jwt_secret_dir }}/{{ execution_jwt_secret_file_name }}"
+execution_environment_general_file_path: "{{ execution_env_dir }}/{{ execution_environment_general_file_name }}"

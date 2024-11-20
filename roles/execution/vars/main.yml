@@ -2,3 +2,4 @@
 execution_jwt_secret_file_name: jwtsecret
 execution_default_binary_name: geth
 execution_syncmode: full
+execution_environment_general_file_name: "{{ service_identifier }}.env"
