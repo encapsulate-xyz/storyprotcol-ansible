@@ -1,11 +1,16 @@
 ---
 org: encapsulate
 domain_regex: ^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$
+monitor_server_dns: monitor.encapsulate.xyz
 ansible_port: 8192
 
 default_node_types:
   - validator
   - default
+
+architecture_map:
+  x86_64: amd64
+  aarch64: arm64
 
 tmp_dir: /tmp
 
@@ -16,7 +21,7 @@ go:
 
 storyprotocol:
   validator:
-    port_prefix: 100
+    port_prefix: 201
     execution:
       source_url: https://github.com/piplabs/story-geth
       ports:
@@ -40,3 +45,5 @@ storyprotocol:
           rosetta: 80
           grpc: 90
           grpc_web: 91
+  fullnode:
+    port_prefix: 202

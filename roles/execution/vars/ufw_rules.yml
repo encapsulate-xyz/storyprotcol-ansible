@@ -9,5 +9,5 @@ execution_ufw_rules:
   - port: "{{ execution_metrics_port }}"
     proto: tcp
     rule: allow
-    from: monitor.encapsulate.xyz
+    from: "{{ monitor_server_dns }}"
     comment: execution_metrics_port

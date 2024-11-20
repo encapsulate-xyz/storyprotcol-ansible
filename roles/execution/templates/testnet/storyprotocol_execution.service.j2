@@ -4,7 +4,7 @@ Description= {{ service_identifier }} layer client
 [Service]
 User={{ service_identifier }}
 Group={{ service_identifier }}
-EnvironmentFile={{ execution_env_dir }}/{{ service_identifier }}.env
+EnvironmentFile={{ execution_environment_general_file_path }}
 WorkingDirectory={{ execution_data_dir }}
 ExecStart={{ execution_bin_dir }}/{{ service_identifier }} --{{ storyprotocol[type].execution.chain_id }}
 Restart=always
