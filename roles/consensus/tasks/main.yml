@@ -74,6 +74,17 @@
         secret_destination_path: "{{ consensus_node_key_path }}"
         secret_type: json
 
+- name: Creates validator state file
+  ansible.builtin.copy:
+    src: priv_validator_state.json
+    dest: "{{ consensus_priv_validator_state_file_path }}"
+    owner: "{{ service_identifier }}"
+    group: "{{ service_identifier }}"
+    mode: "0600"
+    force: false
+  notify:
+    - Restart service
+
 - name: Save jwtsecret
   ansible.builtin.template:
     src: jwt_secret.j2

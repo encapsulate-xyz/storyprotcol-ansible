@@ -19,6 +19,9 @@ consensus_log_file_path: "{{ consensus_log_dir }}/{{ service_identifier }}.log"
 
 consensus_priv_validator_key_path: "{{ consensus_config_dir }}/{{ consensus_priv_validator_key_file_name }}"
 consensus_node_key_path: "{{ consensus_config_dir }}/{{ consensus_node_key_file_name }}"
+consensus_priv_validator_state_file_path: "{{ consensus_data_dir }}/{{ consensus_priv_validator_state_file_name }}"
+
 consensus_config_file_path: "{{ consensus_config_dir }}/{{ consensus_config_file_name }}"
 consensus_story_file_path: "{{ consensus_config_dir }}/{{ consensus_story_file_name }}"
+
 consensus_jwt_secret_path: "{{ consensus_jwt_secret_dir }}/{{ consensus_jwt_secret_file_name }}"
