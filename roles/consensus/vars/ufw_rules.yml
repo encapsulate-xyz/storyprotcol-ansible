@@ -9,5 +9,5 @@ consensus_ufw_rules:
   - port: "{{ prometheus_port }}"
     proto: tcp
     rule: allow
-    from: monitor.encapsulate.xyz
-    comment: p2p_port
+    from: "{{ monitor_server_dns }}"
+    comment: prometheus_port

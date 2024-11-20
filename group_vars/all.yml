@@ -1,11 +1,16 @@
 ---
 org: encapsulate
 domain_regex: ^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$
+monitor_server_dns: monitor.encapsulate.xyz
 ansible_port: 8192
 
 default_node_types:
   - validator
   - default
+
+architecture_map:
+  x86_64: amd64
+  aarch64: arm64
 
 tmp_dir: /tmp
 
