@@ -21,7 +21,7 @@ engine-jwt-file = "{{ consensus_jwt_secret_path }}"
 # SnapshotInterval specifies the height interval at which story
 # will take state sync snapshots. Defaults to 1000 (roughly once an hour), setting this to
 # 0 disables state snapshots.
-snapshot-interval = 1000
+snapshot-interval = {{ consensus_space_optimization_settings.snapshot_interval }}
 
 # snapshot-keep-recent specifies the number of recent snapshots to keep and serve (0 to keep all).
 snapshot-keep-recent = 2
@@ -45,7 +45,7 @@ min-retain-blocks = 0
 # default: the last 72000 states are kept, pruning at 10 block intervals
 # nothing: all historic states will be saved, nothing will be deleted (i.e. archiving node)
 # everything: 2 latest states will be kept; pruning at 10 block intervals.
-pruning = "default"
+pruning = "{{ consensus_space_optimization_settings.pruning }}"
 
 # AppDBBackend defines the database backend type to use for the application and snapshots DBs.
 # An empty string indicates that a fallback will be used.
@@ -63,10 +63,10 @@ evm-build-delay = "600ms"
 evm-build-optimistic = false
 
 # APIEnable defines if the API server should be enabled.
-api-enable = false
+api-enable = {{ consensus_type_settings.api.enable | tojson }}
 
 # APIAddress defines the API server address to listen on.
-api-address = "127.0.0.1:{{ rest_api_port }}"
+api-address = "{{ consensus_type_settings.api.address[type] }}:{{ rest_api_port }}"
 
 # EnableUnsafeCORS defines whether to enable CORS for API server.
 enabled-unsafe-cors = false
