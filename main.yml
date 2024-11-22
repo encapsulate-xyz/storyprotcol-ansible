@@ -1,0 +1,10 @@
+---
+- name: Import setup_consensus_client playbook
+  ansible.builtin.import_playbook: setup_consensus_client.yml
+
+- name: Import setup_execution_client.yml playbook
+  ansible.builtin.import_playbook: setup_execution_client.yml
+
+- name: Import snapshot_sync playbook
+  ansible.builtin.import_playbook: snapshot_sync.yml
+  when: sync_from_snapshot == true
