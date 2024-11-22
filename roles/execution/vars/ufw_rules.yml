@@ -1,5 +1,4 @@
 ---
----
 execution_ufw_rules:
   validator:
     - port: "{{ execution_p2p_port }}"
