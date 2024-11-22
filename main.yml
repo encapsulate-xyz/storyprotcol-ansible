@@ -7,4 +7,4 @@
 
 - name: Import snapshot_sync playbook
   ansible.builtin.import_playbook: snapshot_sync.yml
-  when: sync_from_snapshot == true
+  when: sync_from_snapshot is defined and sync_from_snapshot | bool
