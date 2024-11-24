@@ -10,7 +10,7 @@ ExecStart={{ execution_bin_dir }}/{{ service_identifier }} --{{ storyprotocol[ty
 Restart=always
 RestartSec=4
 LimitNOFILE=65536
-MemoryLimit=64G
+MemoryMax=64G
 StandardOutput=append:{{ execution_log_file_path }}
 StandardError=inherit
 

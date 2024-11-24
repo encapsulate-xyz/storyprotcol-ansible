@@ -1,13 +1,33 @@
 ---
 execution_ufw_rules:
-  - port: "{{ execution_p2p_port }}"
-    proto: tcp
-    rule: allow
-    from: any
-    comment: execution_p2p_port
+  validator:
+    - port: "{{ execution_p2p_port }}"
+      proto: tcp
+      rule: allow
+      from: any
+      comment: execution_p2p_port
 
-  - port: "{{ execution_metrics_port }}"
-    proto: tcp
-    rule: allow
-    from: "{{ monitor_server_dns }}"
-    comment: execution_metrics_port
+    - port: "{{ execution_metrics_port }}"
+      proto: tcp
+      rule: allow
+      from: "{{ monitor_server_dns }}"
+      comment: execution_metrics_port
+
+  fullnode:
+    - port: "{{ execution_p2p_port }}"
+      proto: tcp
+      rule: allow
+      from: any
+      comment: execution_p2p_port
+
+    - port: "{{ execution_http_port }}"
+      proto: tcp
+      rule: allow
+      from: any
+      comment: execution_http_port
+
+    - port: "{{ execution_metrics_port }}"
+      proto: tcp
+      rule: allow
+      from: "{{ monitor_server_dns }}"
+      comment: execution_metrics_port
