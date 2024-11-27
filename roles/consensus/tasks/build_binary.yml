@@ -38,6 +38,9 @@
     owner: root
     group: root
     remote_src: true
+  notify:
+    - Reload service
+    - Restart service
 
 - name: Clean up the temporary repository directory
   ansible.builtin.file:

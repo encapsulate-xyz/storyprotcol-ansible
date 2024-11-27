@@ -12,6 +12,8 @@ consensus_jwt_secret_file_name: jwtsecret
 consensus_default_binary_name: story
 consensus_execution_engine_api_endpoint: http://localhost:{{ execution_auth_rpc_port }}
 
+consensus_status_endpoint: status
+
 consensus_space_optimization_settings:
   indexer: "null"
   pruning: everything
