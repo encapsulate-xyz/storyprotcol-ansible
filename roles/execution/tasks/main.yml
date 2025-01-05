@@ -14,8 +14,8 @@
     directories: "{{ execution_directories }}"
     log_file_path: "{{ execution_log_file_path }}"
 
-- name: Include build binary task
-  ansible.builtin.include_tasks: build_binary.yml
+- name: Include install binary task
+  ansible.builtin.include_tasks: install_binary.yml
 
 - name: Save jwtsecret
   ansible.builtin.template:
