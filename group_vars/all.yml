@@ -47,3 +47,26 @@ storyprotocol:
           grpc_web: 91
   fullnode:
     port_prefix: 202
+    execution:
+      source_url: https://github.com/piplabs/story-geth
+      ports:
+        suffix:
+          auth_rpc: 51
+          p2p: 30
+          network_discovery: 30
+          metrics: 62
+          http: 45
+    consensus:
+      source_url: https://github.com/piplabs/story
+      ports:
+        suffix:
+          # Used for both p2p_laddr and p2p_external_address
+          p2p: 56
+          rpc: 57
+          abci: 58
+          prometheus: 60
+          pprof: 61
+          rest_api: 17
+          rosetta: 80
+          grpc: 90
+          grpc_web: 91
