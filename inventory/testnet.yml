@@ -7,3 +7,5 @@ all:
       hosts:
         validator.storyprotocol.testnet.encapsulate.xyz:
           type: validator
+        fullnode.storyprotocol.testnet.encapsulate.xyz:
+          type: fullnode
