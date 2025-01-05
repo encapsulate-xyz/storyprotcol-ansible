@@ -22,8 +22,8 @@
     directories: "{{ consensus_directories }}"
     log_file_path: "{{ consensus_log_file_path }}"
 
-- name: Include build binary task
-  ansible.builtin.include_tasks: build_binary.yml
+- name: Include install binary task
+  ansible.builtin.include_tasks: install_binary.yml
 
 - name: Get genesis and configuration files
   block:
@@ -58,9 +58,7 @@
         - Restart service
 
 - name: Fetch secrets from HCP Vault and save to files
-  when:
-    - type == 'validator'
-    - fetch_validator_keys | default(false) | bool
+  when: fetch_validator_keys | default(false) | bool
   block:
     - name: Fetch priv validator key and save
       ansible.builtin.include_tasks: tasks/get_and_save_vault_secret.yml

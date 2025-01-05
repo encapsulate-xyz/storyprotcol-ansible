@@ -1,0 +1,10 @@
+---
+- name: Download Consensus client binary
+  ansible.builtin.get_url:
+    url: "{{ storyprotocol[type].consensus.source_url }}/{{ storyprotocol[type].consensus.version }}/{{ consensus_service_default_binary_name }}"
+    dest: "{{ consensus_bin_dir }}/{{ service_identifier }}"
+    owner: root
+    group: root
+    mode: "0755"
+  notify:
+    - Restart service

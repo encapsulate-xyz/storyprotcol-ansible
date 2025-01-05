@@ -9,7 +9,7 @@ consensus_node_key_file_name: node_key.json
 consensus_priv_validator_state_file_name: priv_validator_state.json
 
 consensus_jwt_secret_file_name: jwtsecret
-consensus_default_binary_name: story
+consensus_service_default_binary_name: story-{{ ansible_system | lower }}-{{ system_architecture }}
 consensus_execution_engine_api_endpoint: http://localhost:{{ execution_auth_rpc_port }}
 
 consensus_status_endpoint: status
