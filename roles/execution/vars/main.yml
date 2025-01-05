@@ -1,5 +1,5 @@
 ---
 execution_jwt_secret_file_name: jwtsecret
-execution_default_binary_name: geth
+execution_service_default_binary_name: geth-{{ ansible_system | lower }}-{{ system_architecture }}
 execution_syncmode: full
 execution_environment_general_file_name: "{{ service_identifier }}.env"

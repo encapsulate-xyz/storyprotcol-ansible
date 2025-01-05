@@ -1,0 +1,10 @@
+---
+- name: Download Execution client binary
+  ansible.builtin.get_url:
+    url: "{{ storyprotocol[type].execution.source_url }}/{{ storyprotocol[type].execution.version }}/{{ execution_service_default_binary_name }}"
+    dest: "{{ execution_bin_dir }}/{{ service_identifier }}"
+    owner: root
+    group: root
+    mode: "0755"
+  notify:
+    - Restart service

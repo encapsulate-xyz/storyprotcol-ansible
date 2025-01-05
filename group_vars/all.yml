@@ -12,18 +12,11 @@ architecture_map:
   x86_64: amd64
   aarch64: arm64
 
-tmp_dir: /tmp
-
-go:
-  root: /usr/local/go
-  path: "{{ tmp_dir }}/go"
-  module111: "on"
-
 storyprotocol:
   validator:
     port_prefix: 201
     execution:
-      source_url: https://github.com/piplabs/story-geth
+      source_url: https://github.com/piplabs/story-geth/releases/download
       ports:
         suffix:
           auth_rpc: 51
@@ -32,7 +25,7 @@ storyprotocol:
           metrics: 62
           http: 45
     consensus:
-      source_url: https://github.com/piplabs/story
+      source_url: https://github.com/piplabs/story/releases/download
       ports:
         suffix:
           # Used for both p2p_laddr and p2p_external_address
@@ -48,7 +41,7 @@ storyprotocol:
   fullnode:
     port_prefix: 202
     execution:
-      source_url: https://github.com/piplabs/story-geth
+      source_url: https://github.com/piplabs/story-geth/releases/download
       ports:
         suffix:
           auth_rpc: 51
@@ -57,7 +50,7 @@ storyprotocol:
           metrics: 62
           http: 45
     consensus:
-      source_url: https://github.com/piplabs/story
+      source_url: https://github.com/piplabs/story/releases/download
       ports:
         suffix:
           # Used for both p2p_laddr and p2p_external_address
