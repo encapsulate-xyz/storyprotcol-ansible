@@ -32,6 +32,8 @@
     owner: root
     group: root
     mode: "0644"
+  notify:
+    - Restart service
 
 - name: Copy execution client systemd service file
   ansible.builtin.template:
