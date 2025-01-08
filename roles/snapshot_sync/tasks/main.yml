@@ -25,15 +25,27 @@
     path: "{{ snapshot_sync_data_dir[client] }}"
     state: absent
 
-- name: Download and Extract snapshot
+- name: Download and Extract consensus snapshot
   ansible.builtin.shell: |
     set -o pipefail
-    curl -o - -L {{ storyprotocol[type][client].snapshot_url }} | lz4 -c -d - | tar -x -C {{ snapshot_sync_directories[client] }}
+    curl -o - -L {{ consensus_snapshot_url | default(storyprotocol[type].consensus.snapshot_url) }} | lz4 -c -d - | tar -x -C {{ snapshot_sync_directories.consensus }}
   async: 10000
   poll: 10
   args:
     executable: /bin/bash
-    creates: "{{ snapshot_sync_data_dir[client] }}"
+    creates: "{{ snapshot_sync_data_dir.consensus }}"
+  when: client == "consensus"
+
+- name: Download and Extract execution snapshot
+  ansible.builtin.shell: |
+    set -o pipefail
+    curl -o - -L {{ execution_snapshot_url | default(storyprotocol[type].execution.snapshot_url) }} | lz4 -c -d - | tar -x -C {{ snapshot_sync_directories.execution }}
+  async: 10000
+  poll: 10
+  args:
+    executable: /bin/bash
+    creates: "{{ snapshot_sync_data_dir.execution }}"
+  when: client == "execution"
 
 - name: Handle Restore validator state file backup
   when: client == "consensus"
