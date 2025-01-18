@@ -6,7 +6,7 @@ storyprotocol:
       chain_id: odyssey
       snapshot_url: https://snapshots2.mandragora.io/story/geth_snapshot.lz4
     consensus:
-      version: v0.13.0
+      version: v0.13.2
       chain_id: odyssey
       snapshot_url: https://snapshots2.mandragora.io/story/story_snapshot.lz4
   fullnode:
@@ -15,6 +15,6 @@ storyprotocol:
       chain_id: odyssey
       snapshot_url: https://snapshots2.mandragora.io/story/geth_snapshot.lz4
     consensus:
-      version: v0.13.0
+      version: v0.13.2
       chain_id: odyssey
       snapshot_url: https://snapshots2.mandragora.io/story/story_snapshot.lz4
