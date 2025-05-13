@@ -2,19 +2,19 @@
 storyprotocol:
   validator:
     execution:
-      version: v0.11.0
-      chain_id: odyssey
+      version: v1.0.2
+      chain_id: aeneid
       snapshot_url: https://snapshots2.mandragora.io/story/geth_snapshot.lz4
     consensus:
-      version: v0.13.2
-      chain_id: odyssey
+      version: v1.2.0
+      chain_id: aeneid
       snapshot_url: https://snapshots2.mandragora.io/story/story_snapshot.lz4
   fullnode:
     execution:
-      version: v0.11.0
-      chain_id: odyssey
+      version: v1.0.2
+      chain_id: aeneid
       snapshot_url: https://snapshots2.mandragora.io/story/geth_snapshot.lz4
     consensus:
-      version: v0.13.2
-      chain_id: odyssey
+      version: v1.2.0
+      chain_id: aeneid
       snapshot_url: https://snapshots2.mandragora.io/story/story_snapshot.lz4

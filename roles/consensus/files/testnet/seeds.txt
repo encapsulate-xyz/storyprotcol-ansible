@@ -1,2 +1,2 @@
-75ac7b193e93e928d6c83c273397517cb60603c0@b1.odyssey-testnet.storyrpc.io:26656
-6adbd1e974d6bb1c353aabbc7abef72c81e536f5@b2.odyssey-testnet.storyrpc.io:26656
+46b7995b0b77515380000b7601e6fc21f783e16f@story-testnet-seed.itrocket.net:52656
+944e8889ecd7c13623ef1081aae4555d6f525041@b1-b.odyssey-devnet.storyrpc.io:26656

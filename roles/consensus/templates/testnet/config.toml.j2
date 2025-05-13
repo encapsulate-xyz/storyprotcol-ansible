@@ -8,7 +8,7 @@
 
 # The version of the CometBFT binary that created or
 # last modified the config file. Do not modify this.
-version = "0.38.9"
+version = "0.38.17"
 
 #######################################################################
 ###                   Main Base Config Options                      ###
@@ -289,8 +289,8 @@ type = "nop"
 recheck = true
 
 # recheck_timeout is the time the application has during the rechecking process
-# to return CheckTx responses, once all requests have been sent. Responses that 
-# arrive after the timeout expires are discarded. It only applies to 
+# to return CheckTx responses, once all requests have been sent. Responses that
+# arrive after the timeout expires are discarded. It only applies to
 # non-local ABCI clients and when recheck is enabled.
 #
 # The ideal value will strongly depend on the application. It could roughly be estimated as the
@@ -423,7 +423,7 @@ timeout_precommit_delta = "500ms"
 # How long we wait after committing a block, before starting on the new
 # height (this gives us a chance to receive some more precommits, even
 # though we already have +2/3).
-timeout_commit = "1s"
+timeout_commit = "1.5s"
 
 # How many blocks to look back to check existence of the node's consensus votes before joining consensus
 # When non-zero, the node will panic upon restart

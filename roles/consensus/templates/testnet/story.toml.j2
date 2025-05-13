@@ -5,7 +5,7 @@
 # last modified the config file. Do not modify this.
 version = "{{ storyprotocol[type].consensus.version }}"
 
-# Story network to participate in: mainnet, testnet, or devnet.
+# Story network to participate in: story, odyssey, aeneid, or local.
 network = "{{ storyprotocol[type].consensus.chain_id }}"
 
 #######################################################################
@@ -47,6 +47,10 @@ min-retain-blocks = 0
 # everything: 2 latest states will be kept; pruning at 10 block intervals.
 pruning = "{{ consensus_space_optimization_settings.pruning }}"
 
+# These are applied if and only if the pruning strategy is custom.
+pruning-keep-recent = "72000"
+pruning-interval = "300"
+
 # AppDBBackend defines the database backend type to use for the application and snapshots DBs.
 # An empty string indicates that a fallback will be used.
 # The fallback is the db_backend value set in CometBFT's config.toml.
@@ -60,16 +64,39 @@ evm-build-delay = "600ms"
 # EVMBuildOptimistic defines whether to trigger optimistic EVM payload building.
 # If true, the EVM payload will be triggered on previous finalisation. This allows
 # more time for block building while ensuring faster consensus blocks.
-evm-build-optimistic = false
+evm-build-optimistic = true
 
-# APIEnable defines if the API server should be enabled.
+# WithComet defines whether to run abci app with CometBFT.
+with-comet = true
+
+#######################################################################
+###                           API Options                           ###
+#######################################################################
+
+[api]
+# Enable defines if the API server should be enabled.
 api-enable = {{ consensus_type_settings.api.enable | tojson }}
 
-# APIAddress defines the API server address to listen on.
-api-address = "{{ consensus_type_settings.api.address[type] }}:{{ rest_api_port }}"
+# Address defines the API server address to listen on.
+address = "{{ consensus_type_settings.api.address[type] }}:{{ rest_api_port }}"
 
 # EnableUnsafeCORS defines whether to enable CORS for API server.
-enabled-unsafe-cors = false
+enable-unsafe-cors = false
+
+# ReadTimeout defines the API server read timeout (in seconds).
+read-timeout = 10
+
+# ReadHeaderTimeout defines the API server read header timeout (in seconds).
+read-header-timeout = 10
+
+# WriteTimeout defines the API server write timeout (in seconds).
+write-timeout = 10
+
+# IdleTimeout defines the API server idle timeout (in seconds).
+idle-timeout = 10
+
+# MaxHeaderBytes defines the API server max header (in bytes).
+max-header-bytes = 8192
 
 #######################################################################
 ###                         Logging Options                         ###
