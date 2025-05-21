@@ -2,7 +2,7 @@
 storyprotocol:
   validator:
     execution:
-      version: v1.0.2
+      version: v1.1.0
       chain_id: aeneid
       snapshot_url: https://snapshots2.mandragora.io/story/geth_snapshot.lz4
     consensus:
@@ -11,7 +11,7 @@ storyprotocol:
       snapshot_url: https://snapshots2.mandragora.io/story/story_snapshot.lz4
   fullnode:
     execution:
-      version: v1.0.2
+      version: v1.1.0
       chain_id: aeneid
       snapshot_url: https://snapshots2.mandragora.io/story/geth_snapshot.lz4
     consensus:
