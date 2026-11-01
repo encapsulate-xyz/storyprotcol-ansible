@@ -1,0 +1,4 @@
+# This file contains ignores rule violations for ansible-lint
+roles/consensus/tasks/coordinated_update.yml var-naming[no-role-prefix]
+roles/consensus/tasks/main.yml var-naming[no-role-prefix]
+roles/snapshot_sync/tasks/main.yml yaml[line-length]
